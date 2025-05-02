@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno Ace&display=swap');
+
+:root {
+  --arena-beach-color: #E1C16E;
+  --arena-ocean-color: #006994;
+  --arena-beach-frac: 0.625;
+  --arena-default-color: grey;
+  --arena-default-height: 250px;
+  --arena-text-color: black;
+  --arena-font-size: 1em;
+  --arena-width: 80vw;
+  --arena-start-left: 300px;
+  --body-margin-top: 120px;
+  --dot-color: #f2f2f2;
+  --dot-size: 20px;
+  --event-title-font: "Bruno Ace";
+  --event-title-font-size: 1.5em;
+  --lane-min-height-desktop: 30px;
+  --lane-label-width: 150px;
+  --lane-label-font: "Roboto Mono";
+  --lanel-label-text-color: black;
+  --lap-marker-color: grey;
+  --lap-marker-font: "Roboto";
+  --medal-offset-left: -100px;
+  --medal-font-size: 1em;
+  --medal-size: 20px;
+  --medal-1-color: #d4af37;
+  --medal-2-color: #838996;
+  --medal-3-color: #A97142;
+  --padding-horizontal: 20px;
+  --page-background-color: white;
+  --time-label-longest: 0px;
+  --time-label-font: "Roboto Mono";
+  --title-bar-color: #607d8b;
+  --title-font-size: 2em;
+  --title-padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --arena-font-size: 0.8em;
+    --arena-width: 90vw;
+    --arena-start-left: 0px;
+    --body-margin-top: 40px;
+    --dot-size: 16px;
+    --drodown-font-size: 1em;
+    --dropdown-min-width: 200px;
+    --dropdown-padding: 10px;
+    --lane-label-margin-top: 5px;
+    --lane-row-2-margin: 45px;
+    --lane-min-height-mobile: 55px;
+    --time-label-longest: 100px;
+    --title-font-size: 1em;
+    --title-padding: 5px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --body-margin-top: 60px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  margin-top: var(--body-margin-top);
+  background-color: var(--page-background-color);
+  font-family: var(--default-font);
+}
+
+#arena-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 100vh;
+  width: var(--arena-width);
+}
+
+#arena {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: var(--arena-default-height);
+  border: none;
+}
+
+#playback-speed-container {
+  margin-top: 1rem;
+  text-align: right;
+  padding-right: 10%;
+  font-family: var(--lap-marker-font);
+  color: var(--lap-marker-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.lane {
+  position: relative;
+  width: 100%;
+  height: var(--lane-height, var(--lane-min-height)); /* Default to min height */
+  display: flex;
+  align-items: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+@media screen and (max-width: 768px) {
+  .lane {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.lane-label {
+  padding-left: var(--padding-horizontal);
+  color: var(--lane-label-text-color);
+  font-family: var(--lane-label-font);
+  font-size: var(--arena-font-size);
+}
+
+@media screen and (max-width: 768px) {
+  .lane-label {
+    margin-top: var(--lane-label-margin-top);
+  }
+}
+
+.dot {
+  position: absolute;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  transition: transform 1s linear;
+  border-radius: 50%; /* circle */
+  box-shadow: 0px 2px 6px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dot[dot-team = "Bondi"] {
+  background: conic-gradient(
+    navy 0% 25%,
+    white 25% 50%,
+    navy 50% 75%,
+    white 75% 100%
+  );
+}
+
+.dot[dot-team = "North Bondi"] {
+  background: linear-gradient(
+    to right, 
+  navy 20%, 
+  white 20% 40%, 
+  red 40% 60%, 
+  white 60% 80%, 
+  navy 80%
+  );
+}
+
+.dot[dot-team = "Barbarians"] {
+  background: conic-gradient(
+    yellow 0% 25%,
+    red 25% 50%,
+    yellow 50% 75%,
+    red 75% 100%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .dot {
+    margin-top: var(--lane-row-2-margin);
+    left: calc(var(--arena-start-left) + var(--padding-horizontal));
+  }
+}
+
+.total-time-label {
+  position: absolute;
+  color: var(--arena-text-color);
+  font-family: var(--time-label-font);
+  font-size: var(--arena-font-size);
+}
+
+@media screen and (max-width: 768px) {
+  .total-time-label {
+    margin-top: var(--lane-row-2-margin);
+  }
+}
+
+.medal {
+  position: absolute;
+  width: var(--medal-size);
+  height: var(--medal-size);
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: var(--medal-font-size);
+  text-align: center;
+  line-height: 20px;
+  border: 0.5px solid #666666;
+  box-shadow: 0px 2px 6px 3px rgba(0, 0, 0, 0.3);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.medal[medal-placing = "1"] {
+  background-color: var(--medal-1-color);
+}
+
+.medal[medal-placing = "2"] {
+  background-color: var(--medal-2-color);
+}
+
+.medal[medal-placing = "3"] {
+  background-color: var(--medal-3-color);
+}
+
+#lap-marker {
+  color: var(--lap-marker-color);
+  font-size: 18px;
+  font-family: var(--lap-marker-font);
+  text-align: right;
+  padding-top: 10px;
+  width: 100%; /* Match the arena width */
+  max-width: var(--arena-width);
+  margin: 0 auto;
+}
+
+#event-title {
+  font-size: var(--event-title-font-size);
+  font-family: var(--event-title-font);
+  text-align: center;
+  margin-bottom: var(--padding-horizontal);
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #event-title {
+    display: none;
+  }
+}
+
+#title-bar {
+  width: 100vw; /* Full width of the viewport */
+  background: var(--title-bar-color);
+  color: white;
+  font-family: var(--event-title-font);
+  font-size: var(--title-font-size);
+  text-align: center;
+  padding: var(--title-padding);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* High z-index to keep it above other elements */
+}
+
+#title-bar h1 {
+  margin: 0;
+  padding: 0;
+}

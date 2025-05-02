@@ -1,0 +1,59 @@
+{
+    "eventName": "Tides of Vengeance 2025",
+    "lapDistanceMetres": 400,
+    "lapsPerAthlete": 2,
+    "results": [
+      {
+        "lane": 1,
+        "team": "Bondi",
+        "handicapSeconds": 582,
+        "athletes": [
+          { "leg": 1, "athleteName": "Nicolas Eulry", "timeSeconds": 492 },
+          { "leg": 2, "athleteName": "Tyler Pilbeam", "timeSeconds": 476 },
+          { "leg": 3, "athleteName": "Lucy Burke", "timeSeconds": 529 },
+          { "leg": 4, "athleteName": "Jesse Lockhart-Krause", "timeSeconds": 467 },
+          { "leg": 5, "athleteName": "Elle Kuhta", "timeSeconds": 539 },
+          { "leg": 6, "athleteName": "Alistair Coyne", "timeSeconds": 635 },
+          { "leg": 7, "athleteName": "Brendan O'Mahony", "timeSeconds": 510 },
+          { "leg": 8, "athleteName": "Nathan Defries", "timeSeconds": 509 },
+          { "leg": 9, "athleteName": "Blake Hatton", "timeSeconds": 462 },
+          { "leg": 10, "athleteName": "Kate Fitzpatrick", "timeSeconds": 539 }
+        ]
+      },
+      {
+        "lane": 2,
+        "team": "North Bondi",
+        "handicapSeconds": 969,
+        "athletes": [
+          { "leg": 1, "athleteName": "Talbot Henry", "timeSeconds": 471 },
+          { "leg": 2, "athleteName": "Nick McNamara", "timeSeconds": 408 },
+          { "leg": 3, "athleteName": "Miriam Salter", "timeSeconds": 505 },
+          { "leg": 4, "athleteName": "Brendan Krone", "timeSeconds": 461 },
+          { "leg": 5, "athleteName": "Leonie Wilkinson", "timeSeconds": 621 },
+          { "leg": 6, "athleteName": "Alex Merkur", "timeSeconds": 458 },
+          { "leg": 7, "athleteName": "Kiva Galgut", "timeSeconds": 379 },
+          { "leg": 8, "athleteName": "Rique Miroshnik", "timeSeconds": 535 },
+          { "leg": 9, "athleteName": "Jai Sheridan", "timeSeconds": 445 },
+          { "leg": 10, "athleteName": "Winton Huck", "timeSeconds": 499 }
+        ]
+      },
+      {
+        "lane": 3,
+        "team": "Barbarians",
+        "handicapSeconds": 0,
+        "athletes": [
+          { "leg": 1, "athleteName": "Marta Imaz", "timeSeconds": 615 },
+          { "leg": 2, "athleteName": "Elizabeth Sloane", "timeSeconds": 614 },
+          { "leg": 3, "athleteName": "Andrew Davidson", "timeSeconds": 627 },
+          { "leg": 4, "athleteName": "Annie Parnell", "timeSeconds": 663 },
+          { "leg": 5, "athleteName": "Emily Perrins", "timeSeconds": 670 },
+          { "leg": 6, "athleteName": "Josselin Cousquer", "timeSeconds": 561 },
+          { "leg": 7, "athleteName": "Fin Stronach", "timeSeconds": 422 },
+          { "leg": 8, "athleteName": "Samuel Preston", "timeSeconds": 504 },
+          { "leg": 9, "athleteName": "Jonathan Brett", "timeSeconds": 602 },
+          { "leg": 10, "athleteName": "David Murphy", "timeSeconds": 597 }
+        ]
+      }
+    ]
+  }
+  
