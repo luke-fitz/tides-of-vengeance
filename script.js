@@ -1,5 +1,5 @@
 // Playback speed factor
-let playbackSpeedFactor = 200;
+const playbackSpeedFactor = 200;
 
 // Precomputed styles
 const mediaQuery = window.matchMedia("screen and (max-width: 768px)");
@@ -19,18 +19,6 @@ const minLaneHeight = parseInt(
 // Reset beach vs ocean background widths upon resize
 window.addEventListener('resize', setArenaBackground);
 window.addEventListener('DOMContentLoaded', setArenaBackground);
-
-window.addEventListener('DOMContentLoaded', () => {
-  setArenaBackground();
-
-  const slider = document.getElementById('playback-speed-slider');
-  const speedValue = document.getElementById('playback-speed-value');
-
-  slider.addEventListener('input', () => {
-    playbackSpeedFactor = parseInt(slider.value);
-    speedValue.textContent = slider.value;
-  });
-});
 
 // Fetch the event data
 fetch('./data/event.json')

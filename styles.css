@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bruno Ace&display=swap');
 
 :root {
   --arena-beach-color: #E1C16E;
@@ -15,13 +14,12 @@
   --body-margin-top: 120px;
   --dot-color: #f2f2f2;
   --dot-size: 20px;
-  --event-title-font: "Bruno Ace";
+  --event-title-font: "Roboto";
   --event-title-font-size: 1.5em;
   --lane-min-height-desktop: 30px;
   --lane-label-width: 150px;
   --lane-label-font: "Roboto Mono";
   --lanel-label-text-color: black;
-  --lap-marker-color: grey;
   --lap-marker-font: "Roboto";
   --medal-offset-left: -100px;
   --medal-font-size: 1em;
@@ -33,7 +31,7 @@
   --page-background-color: white;
   --time-label-longest: 0px;
   --time-label-font: "Roboto Mono";
-  --title-bar-color: #607d8b;
+  --title-bar-color: #384acf;
   --title-font-size: 2em;
   --title-padding: 15px;
 }
@@ -65,7 +63,7 @@
 
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   margin: 0;
   margin-top: var(--body-margin-top);
@@ -89,18 +87,6 @@ body {
   width: 100%;
   height: var(--arena-default-height);
   border: none;
-}
-
-#playback-speed-container {
-  margin-top: 1rem;
-  text-align: right;
-  padding-right: 10%;
-  font-family: var(--lap-marker-font);
-  color: var(--lap-marker-color);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.5rem;
 }
 
 .lane {
@@ -154,11 +140,11 @@ body {
 .dot[dot-team = "North Bondi"] {
   background: linear-gradient(
     to right, 
-  navy 20%, 
-  white 20% 40%, 
-  red 40% 60%, 
-  white 60% 80%, 
-  navy 80%
+  brown 20%, 
+  white 20% 42.5%, 
+  red 42.5% 57.5%, 
+  white 57.5% 80%, 
+  brown 80%
   );
 }
 
@@ -220,7 +206,7 @@ body {
 }
 
 #lap-marker {
-  color: var(--lap-marker-color);
+  color: grey;
   font-size: 18px;
   font-family: var(--lap-marker-font);
   text-align: right;
@@ -254,7 +240,7 @@ body {
   padding: var(--title-padding);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   position: fixed; /* Fixed position at the top */
   top: 0;
   left: 0;
